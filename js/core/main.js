@@ -10,23 +10,26 @@ function saveData(key, value) {
   }
 }
 
-function loadData(key, fallback) {
-  try {
-    const saved = localStorage.getItem(key);
-    if (saved === null) {
-      return fallback;
-    }
-    const data = JSON.parse(saved);
-    if (Array.isArray(fallback) && !Array.isArray(data)) {
-      return fallback;
-    }
-    return data;
-  } catch (error) {
-    return fallback;
-  }
-}
 
-let toastTimer = null;
+  function loadData(key, fallback) {
+    try {
+      const saved = localStorage.getItem(key);
+      if (saved === null) {
+        return fallback;
+      }
+      const data = JSON.parse(saved);
+      if (Array.isArray(fallback)) {
+        return Array.isArray(data) ? data : fallback;
+      }
+      if (typeof fallback === "string") {
+        return typeof data === "string" ? data : fallback;
+      }
+      return data ?? fallback;
+    } catch (error) {
+      return fallback;
+    }
+  }
+
 
 function showToast(text) {
   let toast = document.querySelector("#toast");
@@ -39,11 +42,12 @@ function showToast(text) {
   }
   toast.textContent = text;
   toast.classList.add("visible");
-  clearTimeout(toastTimer);
-  toastTimer = setTimeout(function () {
+  clearTimeout(toast.hideTimer);
+  toast.hideTimer = setTimeout(function () {
     toast.classList.remove("visible");
   }, 2200);
 }
+
 
 function applyTheme(theme) {
   const button = document.querySelector("#theme-toggle");
@@ -70,6 +74,9 @@ document.addEventListener("DOMContentLoaded", function () {
     saveData("nomadica-theme", currentTheme);
   });
 });
+
+
+
 
 $(document).ready(function () {
   const $nav = $("#main-nav");
