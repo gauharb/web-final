@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Nomadica helps travellers plan trips around concerts, festivals, sports events, and special occasions.">
+    <title>Plan a trip | Nomadica</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/plan.css">
+  </head>
+  <body id="top">
+    <header id="main-header" class="site-header">
+      <div class="container py-3">
+        <div class="d-flex flex-column flex-lg-row align-items-center justify-content-between gap-3">
+          <div class="brand-row">
+            <a class="brand" href="../index.html"><span class="brand-mark">N</span>Nomadica</a>
+            <button type="button" id="nav-toggle" class="nav-toggle btn btn-outline-success btn-sm rounded-pill" aria-expanded="false" aria-controls="main-nav">☰ Menu</button>
+          </div>
+          <nav id="main-nav" class="site-nav" aria-label="Main navigation">
+            <a href="../index.html">Home</a>
+            <a href="plan.html" aria-current="page">Plan a trip</a>
+            <a href="routes.html">Route options</a>
+            <a href="timeline.html">Timeline</a>
+            <a href="discover.html">Discover</a>
+            <a href="my-trips.html">My trips</a>
+                <a href="weather.html">Weather</a>
+                <a href="about.html">About &amp; contact</a>
+            <a href="sitemap.html">Sitemap</a>
+          </nav>
+          <div class="header-actions">
+            <button type="button" id="theme-toggle" class="btn btn-outline-success btn-sm rounded-pill px-3" aria-pressed="false">☾ Dark</button>
+            <a class="btn btn-nomad btn-sm rounded-pill px-3" href="plan.html">Start planning</a>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main id="main-content">
+      <section class="hero">
+        <div class="container">
+          <p class="eyebrow">Your trip starts here</p>
+          <h1>Plan a trip</h1>
+          <p class="lead">Tell us where you are starting, which event you are travelling to, and when you need to arrive. Then compare sample flights and stays.</p>
+        </div>
+      </section>
+      <section class="section-pad">
+        <div class="container">
+          <div class="row g-5">
+            <div class="col-lg-7">
+              <h2 class="h3 mb-4">Trip details</h2>
+              <form id="trip-form" action="routes.html" method="get" novalidate>
+                <div class="row g-3">
+                  <div class="col-md-6">
+                    <label class="form-label" for="full-name">Full name</label>
+                    <input class="form-control" id="full-name" name="name" type="text" autocomplete="name" placeholder="e.g. Alimzhan Assel">
+                    <div class="invalid-feedback" id="full-name-error" aria-live="polite"></div>
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label" for="email">E-mail</label>
+                    <input class="form-control" id="email" name="email" type="email" autocomplete="email" placeholder="name@example.com">
+                    <div class="invalid-feedback" id="email-error" aria-live="polite"></div>
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label" for="origin">From (city or airport)</label>
+                    <input class="form-control" id="origin" name="origin" type="text" placeholder="e.g. New York, JFK">
+                    <div class="invalid-feedback" id="origin-error" aria-live="polite"></div>
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label" for="destination">To / event</label>
+                    <input class="form-control" id="destination" name="destination" type="text" placeholder="e.g. Glastonbury Festival, UK">
+                    <div class="invalid-feedback" id="destination-error" aria-live="polite"></div>
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label" for="departure-date">Departure date</label>
+                    <input class="form-control" id="departure-date" name="departure" type="date">
+                    <div class="invalid-feedback" id="departure-date-error" aria-live="polite"></div>
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label" for="return-date">Return date (optional)</label>
+                    <input class="form-control" id="return-date" name="return" type="date">
+                    <div class="invalid-feedback" id="return-date-error" aria-live="polite"></div>
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label" for="travellers">Number of travellers</label>
+                    <input class="form-control" id="travellers" name="travellers" type="number" min="1" max="10" value="2">
+                    <div class="form-text">From 1 to 10 people.</div>
+                    <div class="invalid-feedback" id="travellers-error" aria-live="polite"></div>
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label" for="budget">Total budget in USD (optional)</label>
+                    <input class="form-control" id="budget" name="budget" type="number" min="300" max="50000" placeholder="e.g. 2500">
+                    <div class="form-text">Between $300 and $50,000.</div>
+                    <div class="invalid-feedback" id="budget-error" aria-live="polite"></div>
+                  </div>
+                  <div class="col-12">
+                    <label class="form-label" for="purpose">Trip purpose</label>
+                    <select class="form-select" id="purpose" name="purpose">
+                      <option value="">Choose a purpose…</option>
+                    </select>
+                    <div class="invalid-feedback" id="purpose-error" aria-live="polite"></div>
+                  </div>
+                  <div class="col-12">
+                    <p class="form-label mb-2">Preferences (optional)</p>
+                    <div class="d-flex flex-wrap gap-3">
+                      <label class="form-check-label" for="direct-flights">
+                        <input class="form-check-input me-1" id="direct-flights" name="direct-flights" type="checkbox" value="yes">
+                        Direct flights only
+                      </label>
+                      <label class="form-check-label" for="hotel-suggestions">
+                        <input class="form-check-input me-1" id="hotel-suggestions" name="hotel-suggestions" type="checkbox" value="yes" checked>
+                        Include hotel suggestions
+                      </label>
+                      <label class="form-check-label" for="nearby-places">
+                        <input class="form-check-input me-1" id="nearby-places" name="nearby-places" type="checkbox" value="yes">
+                        Show nearby places
+                      </label>
+                      <label class="form-check-label" for="buffer-time">
+                        <input class="form-check-input me-1" id="buffer-time" name="buffer-time" type="checkbox" value="yes">
+                        Add buffer time
+                      </label>
+                    </div>
+                  </div>
+                  <div class="col-12 d-flex flex-wrap gap-2">
+                    <button class="btn btn-nomad rounded-pill px-4" type="submit">Check my trip</button>
+                    <button class="btn btn-outline-secondary rounded-pill px-4" type="reset">Clear form</button>
+                  </div>
+                </div>
+              </form>
+              <p id="form-errors" class="alert alert-danger mt-3" role="alert" style="display: none;"></p>
+              <div id="trip-success" class="alert alert-success mt-3" role="status" style="display: none;">
+                <h3 class="h5">Your trip outline is ready ✓</h3>
+                <p id="success-text" class="mb-2"></p>
+                <a class="btn btn-nomad btn-sm rounded-pill px-3" href="routes.html">See route options →</a>
+                <a id="save-trip-link" class="btn btn-outline-success btn-sm rounded-pill px-3 ms-2" href="my-trips.html">Save this trip →</a>
+              </div>
+              <p class="small text-secondary mt-3">All fields are checked with JavaScript in the browser. Nothing is saved or sent to a server.</p>
+            </div>
+            <div class="col-lg-5">
+              <div class="callout">
+                <h2 class="h4">A simple planning order</h2>
+                <ol class="mb-0">
+                  <li>Enter your starting point, event, and travel dates.</li>
+                  <li>Compare sample flights, accommodation, and estimated fares.</li>
+                  <li>Plan transfers and add a buffer before the event begins.</li>
+                  <li>Leave time for food, culture, and places near the venue.</li>
+                </ol>
+              </div>
+              <img class="travel-image mt-4" src="../images/plane.jpg" alt="Warm desert dunes beneath an evening sky">
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer id="site-footer" class="site-footer mt-5">
+      <div class="container">
+        <div class="row g-4 align-items-start">
+          <div class="col-md-5">
+            <a class="brand text-white" href="../index.html"><span class="brand-mark">N</span>Nomadica</a>
+            <p class="mt-3">Travel planning built around the events you love.</p>
+          </div>
+          <div class="col-md-7">
+            <p class="fw-bold mb-2">Explore</p>
+            <div class="footer-links">
+              <a href="plan.html">Plan a trip</a>
+              <a href="routes.html">Route options</a>
+              <a href="timeline.html">Timeline</a>
+              <a href="discover.html">Discover</a>
+              <a href="my-trips.html">My trips</a>
+              <a href="weather.html">Weather</a>
+              <a href="about.html">Contact</a>
+              <a href="sitemap.html">Sitemap</a>
+            </div>
+          </div>
+        </div>
+        <p class="small mt-4">&copy; 2026 Nomadica Event Travel · Gauhar - Beksultan - Nazar</p>
+      </div>
+    </footer>
+    <a class="back-top" href="#top" aria-label="Back to top">↑ Top</a>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="../js/core/main.js"></script>
+    <script src="../js/data/data.js"></script>
+    <script src="../js/core/validation.js"></script>
+    <script src="../js/pages/plan.js"></script>
+  </body>
+</html>
