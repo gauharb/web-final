@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Nomadica helps travellers plan trips around concerts, festivals, sports events, and special occasions.">
+    <title>Weather | Nomadica</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/weather.css">
+</head>
+<body id="top">
+<header id="main-header" class="site-header">
+    <div class="container py-3">
+        <div class="d-flex flex-column flex-lg-row align-items-center justify-content-between gap-3">
+            <div class="brand-row">
+              <a class="brand" href="../index.html"><span class="brand-mark">N</span>Nomadica</a>
+              <button type="button" id="nav-toggle" class="nav-toggle btn btn-outline-success btn-sm rounded-pill" aria-expanded="false" aria-controls="main-nav">☰ Menu</button>
+            </div>
+            <nav id="main-nav" class="site-nav" aria-label="Main navigation">
+                <a href="../index.html">Home</a>
+                <a href="plan.html">Plan a trip</a>
+                <a href="routes.html">Route options</a>
+                <a href="timeline.html">Timeline</a>
+                <a href="discover.html">Discover</a>
+              <a href="my-trips.html">My trips</a>
+              <a href="weather.html" aria-current="page">Weather</a>
+                <a href="about.html">About &amp; contact</a>
+                <a href="sitemap.html">Sitemap</a>
+            </nav>
+            <div class="header-actions">
+              <button type="button" id="theme-toggle" class="btn btn-outline-success btn-sm rounded-pill px-3" aria-pressed="false">☾ Dark</button>
+              <a class="btn btn-nomad btn-sm rounded-pill px-3" href="plan.html">Start planning</a>
+            </div>
+        </div>
+    </div>
+</header>
+<main id="main-content">
+  <section class="hero"><div class="container"><p class="eyebrow">Final project · Live travel data</p><h1>Destination weather</h1><p class="lead">Search a city and retrieve current conditions plus a five-day forecast from Open-Meteo.</p></div></section>
+  <section class="section-pad"><div class="container"><div class="row g-4"><div class="col-lg-5">
+  <div class="feature-card p-4"><h2 class="h4">Check a destination</h2><form id="weather-form"><label class="form-label" for="weather-city">City</label><input id="weather-city" class="form-control mb-3" type="search" placeholder="e.g. London" minlength="2" required><button id="weather-submit" type="submit" class="btn btn-nomad rounded-pill px-4">Get live forecast</button></form><p class="small text-secondary mt-3 mb-0">Powered by Open-Meteo. Requires internet access. No API key or account needed. Trips further than 5 days ahead may not have forecasts yet.</p></div>
+  </div><div class="col-lg-7"><div id="weather-status" role="status" aria-live="polite" hidden></div><div id="weather-results" aria-live="polite"><p class="callout">Search for your destination to see live weather.</p></div></div></div></div></section>
+</main>
+<footer id="site-footer" class="site-footer mt-5">
+    <div class="container">
+        <div class="row g-4 align-items-start">
+            <div class="col-md-5">
+                <a class="brand text-white" href="../index.html"><span class="brand-mark">N</span>Nomadica</a>
+                <p class="mt-3">Travel planning built around the events you love.</p>
+            </div>
+            <div class="col-md-7">
+                <p class="fw-bold mb-2">Explore</p>
+                <div class="footer-links">
+                    <a href="plan.html">Plan a trip</a>
+                    <a href="routes.html">Route options</a>
+                    <a href="timeline.html">Timeline</a>
+                    <a href="discover.html">Discover</a>
+                    <a href="my-trips.html">My trips</a>
+              <a href="weather.html">Weather</a>
+              <a href="about.html">Contact</a>
+                    <a href="sitemap.html">Sitemap</a>
+                </div>
+            </div>
+        </div>
+        <p class="small mt-4">&copy; 2026 Nomadica Event Travel · Gauhar - Beksultan - Nazar</p>
+    </div>
+</footer>
+<a class="back-top" href="#top" aria-label="Back to top">↑ Top</a>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="../js/core/main.js"></script>
+  <script src="../js/pages/weather.js"></script>
+</body>
+</html>
