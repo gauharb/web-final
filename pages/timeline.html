@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Nomadica helps travellers plan trips around concerts, festivals, sports events, and special occasions.">
+  <title>Timeline | Nomadica</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <link rel="stylesheet" href="../css/timeline.css">
+</head>
+<body id="top">
+<header id="main-header" class="site-header">
+  <div class="container py-3">
+    <div class="d-flex flex-column flex-lg-row align-items-center justify-content-between gap-3">
+      <div class="brand-row">
+        <a class="brand" href="../index.html"><span class="brand-mark">N</span>Nomadica</a>
+        <button type="button" id="nav-toggle" class="nav-toggle btn btn-outline-success btn-sm rounded-pill" aria-expanded="false" aria-controls="main-nav">☰ Menu</button>
+      </div>
+      <nav id="main-nav" class="site-nav" aria-label="Main navigation">
+        <a href="../index.html">Home</a>
+        <a href="plan.html">Plan a trip</a>
+        <a href="routes.html">Route options</a>
+        <a href="timeline.html" aria-current="page">Timeline</a>
+        <a href="discover.html">Discover</a>
+        <a href="my-trips.html">My trips</a>
+                <a href="weather.html">Weather</a>
+                <a href="about.html">About &amp; contact</a>
+        <a href="sitemap.html">Sitemap</a>
+      </nav>
+      <div class="header-actions">
+        <button type="button" id="theme-toggle" class="btn btn-outline-success btn-sm rounded-pill px-3" aria-pressed="false">☾ Dark</button>
+        <a class="btn btn-nomad btn-sm rounded-pill px-3" href="plan.html">Start planning</a>
+      </div>
+    </div>
+  </div>
+</header>
+<main id="main-content">
+  <section class="hero">
+    <div class="container">
+      <p class="eyebrow">Your event itinerary</p>
+      <h1>Travel around event day</h1>
+    </div>
+  </section>
+  <section class="section-pad">
+    <div class="container">
+      <div class="row g-5">
+        <div id="timeline-list" class="col-lg-8">
+          <div class="d-flex flex-wrap gap-2 mb-3">
+            <button type="button" id="expand-all" class="btn btn-outline-success btn-sm rounded-pill px-3">Expand all</button>
+            <button type="button" id="collapse-all" class="btn btn-outline-secondary btn-sm rounded-pill px-3">Collapse all</button>
+          </div>
+          <div class="timeline" data-day="Day 1">
+            <time datetime="P1D">Day 1</time>
+            <div>
+              <button type="button" class="day-toggle" aria-expanded="false" aria-controls="day-1-details">Depart from New York</button>
+              <div class="day-details" id="day-1-details">
+                <p>Check in at JFK and leave time for security before your international flight.</p>
+                <ul class="extra-list"></ul>
+              </div>
+              <label class="ready-check small" for="day-1-ready">
+                <input class="form-check-input me-1" id="day-1-ready" type="checkbox"> Ready
+              </label>
+            </div>
+          </div>
+          <div class="timeline" data-day="Day 2">
+            <time datetime="P2D">Day 2</time>
+            <div>
+              <button type="button" class="day-toggle" aria-expanded="false" aria-controls="day-2-details">Arrive in London</button>
+              <div class="day-details" id="day-2-details">
+                <p>Collect your bags at Heathrow, transfer to your hotel, and leave time to check in and rest.</p>
+                <ul class="extra-list"></ul>
+              </div>
+              <label class="ready-check small" for="day-2-ready">
+                <input class="form-check-input me-1" id="day-2-ready" type="checkbox"> Ready
+              </label>
+            </div>
+          </div>
+          <div class="timeline" data-day="Day 3">
+            <time datetime="P3D">Day 3</time>
+            <div>
+              <button type="button" class="day-toggle" aria-expanded="false" aria-controls="day-3-details">Explore near your stay</button>
+              <div class="day-details" id="day-3-details">
+                <p>Choose a museum, market, or meal nearby. Keep the schedule flexible before the event.</p>
+                <ul class="extra-list"></ul>
+              </div>
+              <label class="ready-check small" for="day-3-ready">
+                <input class="form-check-input me-1" id="day-3-ready" type="checkbox"> Ready
+              </label>
+            </div>
+          </div>
+          <div class="timeline" data-day="Day 4">
+            <time datetime="P4D">Day 4</time>
+            <div>
+              <button type="button" class="day-toggle" aria-expanded="false" aria-controls="day-4-details">Travel to the event area</button>
+              <div class="day-details" id="day-4-details">
+                <p>Confirm your coach or rail connection and add a buffer for the journey to the venue.</p>
+                <ul class="extra-list"></ul>
+              </div>
+              <label class="ready-check small" for="day-4-ready">
+                <input class="form-check-input me-1" id="day-4-ready" type="checkbox"> Ready
+              </label>
+            </div>
+          </div>
+          <div class="timeline" data-day="Day 5">
+            <time datetime="P5D">Day 5</time>
+            <div>
+              <button type="button" class="day-toggle" aria-expanded="false" aria-controls="day-5-details">Festival day</button>
+              <div class="day-details" id="day-5-details">
+                <p>Check your ticket and entry details, arrive early, and note the performances you want to see.</p>
+                <ul class="extra-list"></ul>
+              </div>
+              <label class="ready-check small" for="day-5-ready">
+                <input class="form-check-input me-1" id="day-5-ready" type="checkbox"> Ready
+              </label>
+            </div>
+          </div>
+          <div class="timeline" data-day="Day 6">
+            <time datetime="P6D">Day 6</time>
+            <div>
+              <button type="button" class="day-toggle" aria-expanded="false" aria-controls="day-6-details">More time for the event</button>
+              <div class="day-details" id="day-6-details">
+                <p>Keep time for food, rest, and meeting points between event activities.</p>
+                <ul class="extra-list"></ul>
+              </div>
+              <label class="ready-check small" for="day-6-ready">
+                <input class="form-check-input me-1" id="day-6-ready" type="checkbox"> Ready
+              </label>
+            </div>
+          </div>
+          <div class="timeline" data-day="Day 7">
+            <time datetime="P7D">Day 7</time>
+            <div>
+              <button type="button" class="day-toggle" aria-expanded="false" aria-controls="day-7-details">Start the return journey</button>
+              <div class="day-details" id="day-7-details">
+                <p>Leave enough time for the transfer back to London and the airport.</p>
+                <ul class="extra-list"></ul>
+              </div>
+              <label class="ready-check small" for="day-7-ready">
+                <input class="form-check-input me-1" id="day-7-ready" type="checkbox"> Ready
+              </label>
+            </div>
+          </div>
+        </div>
+        <aside class="col-lg-4">
+          <div class="callout">
+            <p class="eyebrow">Trip snapshot</p>
+            <span class="stat">7 days</span>
+            <p>New York to London and the festival area.</p>
+            <p id="done-count" class="fw-bold mb-1" aria-live="polite"></p>
+            <div class="progress mb-3" role="progressbar" aria-label="Days ready" aria-valuemin="0" aria-valuemax="100">
+              <div id="progress-bar" class="progress-bar" style="width: 0%;" aria-valuenow="0"></div>
+            </div>
+            <hr>
+            <h2 class="h5">Add an activity</h2>
+            <form id="activity-form" novalidate>
+              <label class="form-label small" for="activity-day">Day</label>
+              <select class="form-select form-select-sm mb-2" id="activity-day">
+                <option value="1">Day 1</option><option value="2">Day 2</option><option value="3">Day 3</option>
+                <option value="4">Day 4</option><option value="5">Day 5</option><option value="6">Day 6</option>
+                <option value="7">Day 7</option>
+              </select>
+              <label class="form-label small" for="activity-text">Activity</label>
+              <input class="form-control form-control-sm" id="activity-text" type="text" placeholder="e.g. Lunch at Borough Market">
+              <div class="invalid-feedback" id="activity-text-error"></div>
+              <button class="btn btn-nomad btn-sm rounded-pill px-3 mt-2" type="submit">Add activity</button>
+            </form>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+</main>
+<footer id="site-footer" class="site-footer mt-5">
+  <div class="container">
+    <div class="row g-4 align-items-start">
+      <div class="col-md-5">
+        <a class="brand text-white" href="../index.html"><span class="brand-mark">N</span>Nomadica</a>
+        <p class="mt-3">Travel planning built around the events you love.</p>
+      </div>
+      <div class="col-md-7">
+        <p class="fw-bold mb-2">Explore</p>
+        <div class="footer-links">
+          <a href="plan.html">Plan a trip</a>
+          <a href="routes.html">Route options</a>
+          <a href="timeline.html">Timeline</a>
+          <a href="discover.html">Discover</a>
+          <a href="my-trips.html">My trips</a>
+              <a href="weather.html">Weather</a>
+              <a href="about.html">Contact</a>
+          <a href="sitemap.html">Sitemap</a>
+        </div>
+      </div>
+    </div>
+    <p class="small mt-4">&copy; 2026 Nomadica Event Travel · Gauhar - Beksultan - Nazar</p>
+  </div>
+</footer>
+<a class="back-top" href="#top" aria-label="Back to top">↑ Top</a>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="../js/core/main.js"></script>
+    <script src="../js/pages/timeline.js"></script>
+</body>
+</html>
