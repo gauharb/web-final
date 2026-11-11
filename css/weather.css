@@ -374,11 +374,9 @@ body.dark-theme .timeline {
 
 
 
-/* Final stage: page-only styles. Shared header, footer, forms and theme rules above. */
 
 .weather-days {display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:.75rem;}
 
-/* Shared Nomadica card design, included here so each Final page has independent CSS */
 .feature-card {height:100%;padding:1.5rem;background:#fff;border:1px solid #dce3dc;border-radius:1rem;}
 .feature-card p:last-child {margin-bottom:0;color:#63736d;}
 body.dark-theme .feature-card {background:#162b27;border-color:#2b4440;}
