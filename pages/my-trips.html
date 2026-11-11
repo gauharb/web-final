@@ -6,145 +6,73 @@
     <meta name="description" content="Nomadica helps travellers plan trips around concerts, festivals, sports events, and special occasions.">
     <title>My trips | Nomadica</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-    <link rel="stylesheet" href="../../../Desktop/nomadica-final/css/my-trips.css">
+    <link rel="stylesheet" href="../css/my-trips.css">
 </head>
 <body id="top">
 <header id="main-header" class="site-header">
     <div class="container py-3">
         <div class="d-flex flex-column flex-lg-row align-items-center justify-content-between gap-3">
             <div class="brand-row">
-              <a class="brand" href="../../../Desktop/nomadica-final/index.html"><span class="brand-mark">N</span>Nomadica</a>
+              <a class="brand" href="../index.html"><span class="brand-mark">N</span>Nomadica</a>
               <button type="button" id="nav-toggle" class="nav-toggle btn btn-outline-success btn-sm rounded-pill" aria-expanded="false" aria-controls="main-nav">☰ Menu</button>
             </div>
             <nav id="main-nav" class="site-nav" aria-label="Main navigation">
-                <a href="../../../Desktop/nomadica-final/index.html">Home</a>
-                <a href="../../../Desktop/nomadica-final/pages/plan.html">Plan a trip</a>
-                <a href="../../../Desktop/nomadica-final/pages/routes.html">Route options</a>
-                <a href="../../../Desktop/nomadica-final/pages/timeline.html">Timeline</a>
+                <a href="../index.html">Home</a>
+                <a href="plan.html">Plan a trip</a>
+                <a href="routes.html">Route options</a>
+                <a href="timeline.html">Timeline</a>
                 <a href="discover.html">Discover</a>
-                <a href="my-trips.html" aria-current="page">My trips</a>
-                <a href="../../../Desktop/nomadica-final/pages/weather.html">Weather</a>
-                <a href="../../../Desktop/nomadica-final/pages/about.html">About &amp; contact</a>
-                <a href="../../../Desktop/nomadica-final/pages/sitemap.html">Sitemap</a>
+              <a href="my-trips.html" aria-current="page">My trips</a>
+              <a href="weather.html">Weather</a>
+                <a href="about.html">About &amp; contact</a>
+                <a href="sitemap.html">Sitemap</a>
             </nav>
             <div class="header-actions">
               <button type="button" id="theme-toggle" class="btn btn-outline-success btn-sm rounded-pill px-3" aria-pressed="false">☾ Dark</button>
-              <a class="btn btn-nomad btn-sm rounded-pill px-3" href="../../../Desktop/nomadica-final/pages/plan.html">Start planning</a>
+              <a class="btn btn-nomad btn-sm rounded-pill px-3" href="plan.html">Start planning</a>
             </div>
         </div>
     </div>
 </header>
 <main id="main-content">
-    <section class="hero">
-        <div class="container">
-            <p class="eyebrow">Your saved plans</p>
-            <h1>My trips</h1>
-            <p class="lead">Save your trips, edit them, delete them and compare budgets. Trips are kept in this browser, so they are still here when you come back.</p>
-        </div>
-    </section>
-    <section class="section-pad">
-        <div class="container">
-            <div class="row g-5">
-                <div class="col-lg-5">
-                    <h2 class="h3" id="form-title">Add a trip</h2>
-                    <form id="trip-form" novalidate>
-                        <div class="mb-3">
-                            <label for="trip-origin" class="form-label">From (city)</label>
-                            <input id="trip-origin" class="form-control" type="text" placeholder="e.g. Astana">
-                            <div id="trip-origin-error" class="invalid-feedback"></div>
-                        </div>
-                        <div class="mb-3">
-                            <label for="trip-destination" class="form-label">To (city)</label>
-                            <input id="trip-destination" class="form-control" type="text" placeholder="e.g. London">
-                            <div id="trip-destination-error" class="invalid-feedback"></div>
-                        </div>
-                        <div class="row g-2 mb-3">
-                            <div class="col-sm-6">
-                                <label for="trip-departure" class="form-label">Departure</label>
-                                <input id="trip-departure" class="form-control" type="date">
-                                <div id="trip-departure-error" class="invalid-feedback"></div>
-                            </div>
-                            <div class="col-sm-6">
-                                <label for="trip-return" class="form-label">Return (optional)</label>
-                                <input id="trip-return" class="form-control" type="date">
-                                <div id="trip-return-error" class="invalid-feedback"></div>
-                            </div>
-                        </div>
-                        <div class="row g-2 mb-3">
-                            <div class="col-sm-6">
-                                <label for="trip-travellers" class="form-label">Travellers (1–10)</label>
-                                <input id="trip-travellers" class="form-control" type="number" min="1" max="10" value="1">
-                                <div id="trip-travellers-error" class="invalid-feedback"></div>
-                            </div>
-                            <div class="col-sm-6">
-                                <label for="trip-budget" class="form-label">Total budget ($)</label>
-                                <input id="trip-budget" class="form-control" type="number" min="0" max="50000" placeholder="e.g. 1500">
-                                <div id="trip-budget-error" class="invalid-feedback"></div>
-                            </div>
-                        </div>
-                        <div class="mb-3">
-                            <label for="trip-purpose" class="form-label">Purpose</label>
-                            <select id="trip-purpose" class="form-select">
-                                <option value="">Choose…</option>
-                            </select>
-                            <div id="trip-purpose-error" class="invalid-feedback"></div>
-                        </div>
-                        <div class="d-flex flex-wrap gap-2">
-                            <button id="save-button" type="submit" class="btn btn-nomad rounded-pill px-4">Save trip</button>
-                            <button id="cancel-button" type="button" class="btn btn-outline-secondary rounded-pill px-4" hidden>Cancel editing</button>
-                        </div>
-                    </form>
-                    <div id="trip-message" class="alert mt-3" role="status" style="display: none;"></div>
-                </div>
-
-                <div class="col-lg-7">
-                    <h2 class="h3">Dashboard</h2>
-                    <div class="row g-2 mb-4">
-                        <div class="col-6 col-md-3"><div class="stat-box"><span>Trips</span><strong id="stat-trips">0</strong></div></div>
-                        <div class="col-6 col-md-3"><div class="stat-box"><span>Travellers</span><strong id="stat-travellers">0</strong></div></div>
-                        <div class="col-6 col-md-3"><div class="stat-box"><span>Total budget</span><strong id="stat-budget">$0</strong></div></div>
-                        <div class="col-6 col-md-3"><div class="stat-box"><span>Total days</span><strong id="stat-days">0</strong></div></div>
-                    </div>
-                    <h3 class="h5">Budget per trip</h3>
-                    <div id="budget-chart" class="mb-4"></div>
-
-                    <div class="d-flex flex-wrap align-items-center justify-content-between gap-2 mb-3">
-                        <h2 class="h3 mb-0">Saved trips</h2>
-                        <div class="d-flex flex-wrap gap-2">
-                            <label for="trip-sort" class="visually-hidden">Sort trips</label>
-                            <select id="trip-sort" class="form-select form-select-sm w-auto">
-                                <option value="date">Sort: departure date</option>
-                                <option value="budget-high">Sort: budget (high → low)</option>
-                                <option value="budget-low">Sort: budget (low → high)</option>
-                                <option value="name">Sort: destination A–Z</option>
-                            </select>
-                            <button id="clear-button" type="button" class="btn btn-sm btn-outline-danger rounded-pill">Clear all</button>
-                        </div>
-                    </div>
-                    <div id="trip-list"></div>
-                </div>
-            </div>
-        </div>
-    </section>
+  <section class="hero"><div class="container"><p class="eyebrow">Final project · Trip manager</p>
+    <h1>My saved trips</h1><p class="lead">Create, edit, and delete trip outlines. See a live budget dashboard. Stored only in your browser.</p></div></section>
+  <section class="section-pad"><div class="container"><div class="row g-5">
+    <div class="col-lg-5"><h2 class="h3">Trip details</h2>
+      <form id="saved-trip-form" novalidate>
+        <div class="mb-3"><label for="trip-origin" class="form-label">Starting city</label><input id="trip-origin" class="form-control" placeholder="e.g. Astana" required></div>
+        <div class="mb-3"><label for="trip-destination" class="form-label">Destination city</label><input id="trip-destination" class="form-control" placeholder="e.g. London" required></div>
+        <div class="row g-2 mb-3"><div class="col-sm-6"><label for="trip-departure" class="form-label">Departure</label><input id="trip-departure" class="form-control" type="date" required></div><div class="col-sm-6"><label for="trip-return" class="form-label">Return (optional)</label><input id="trip-return" class="form-control" type="date"></div></div>
+        <div class="row g-2 mb-3"><div class="col-sm-6"><label for="trip-people" class="form-label">Travellers (1–10)</label><input id="trip-people" class="form-control" type="number" min="1" max="10" value="2"></div><div class="col-sm-6"><label for="trip-budget" class="form-label">Total budget (USD)</label><input id="trip-budget" class="form-control" type="number" min="0" max="50000" value="1000"></div></div>
+        <div class="mb-3"><label for="trip-purpose" class="form-label">Purpose</label><select id="trip-purpose" class="form-select"><option>Festival</option><option>Concert</option><option>Sports event</option><option>Business event</option><option>Leisure</option><option>Other</option></select></div>
+        <div class="mb-3"><label for="trip-notes" class="form-label">Notes (optional, 240 characters)</label><textarea id="trip-notes" class="form-control" maxlength="240" rows="3" placeholder="Accommodation, places to visit, transfer ideas…"></textarea></div>
+        <div class="d-flex gap-2 flex-wrap"><button id="trip-save-button" type="submit" class="btn btn-nomad rounded-pill px-4">Save trip</button><button id="cancel-edit" type="button" class="btn btn-outline-secondary rounded-pill" hidden>Cancel editing</button></div>
+      </form><div id="trip-manager-feedback" role="status" aria-live="polite" hidden></div>
+    </div>
+    <div class="col-lg-7"><div class="d-flex justify-content-between align-items-center flex-wrap gap-2"><h2 class="h3 mb-0">Your trips</h2><button id="clear-saved-trips" class="btn btn-sm btn-outline-danger rounded-pill" type="button">Clear all saved trips</button></div>
+      <div class="row g-2 my-3"><div class="col-4"><div class="feature-card p-3"><span class="small">Saved trips</span><div id="stat-trips" class="h3">0</div></div></div><div class="col-4"><div class="feature-card p-3"><span class="small">Travellers</span><div id="stat-travellers" class="h3">0</div></div></div><div class="col-4"><div class="feature-card p-3"><span class="small">Budgets total</span><div id="stat-budget" class="h3">$0</div></div></div></div>
+      <h3 class="h5">Budget comparison</h3><div id="budget-chart" aria-live="polite"></div>
+      <h3 class="h5 mt-4">Saved outlines</h3><div id="saved-trip-list" aria-live="polite"></div>
+    </div></div></div></section>
 </main>
 <footer id="site-footer" class="site-footer mt-5">
     <div class="container">
         <div class="row g-4 align-items-start">
             <div class="col-md-5">
-                <a class="brand text-white" href="../../../Desktop/nomadica-final/index.html"><span class="brand-mark">N</span>Nomadica</a>
+                <a class="brand text-white" href="../index.html"><span class="brand-mark">N</span>Nomadica</a>
                 <p class="mt-3">Travel planning built around the events you love.</p>
             </div>
             <div class="col-md-7">
                 <p class="fw-bold mb-2">Explore</p>
                 <div class="footer-links">
-                    <a href="../../../Desktop/nomadica-final/pages/plan.html">Plan a trip</a>
-                    <a href="../../../Desktop/nomadica-final/pages/routes.html">Route options</a>
-                    <a href="../../../Desktop/nomadica-final/pages/timeline.html">Timeline</a>
+                    <a href="plan.html">Plan a trip</a>
+                    <a href="routes.html">Route options</a>
+                    <a href="timeline.html">Timeline</a>
                     <a href="discover.html">Discover</a>
                     <a href="my-trips.html">My trips</a>
-                    <a href="../../../Desktop/nomadica-final/pages/weather.html">Weather</a>
-                    <a href="../../../Desktop/nomadica-final/pages/about.html">Contact</a>
-                    <a href="../../../Desktop/nomadica-final/pages/sitemap.html">Sitemap</a>
+              <a href="weather.html">Weather</a>
+              <a href="about.html">Contact</a>
+                    <a href="sitemap.html">Sitemap</a>
                 </div>
             </div>
         </div>
@@ -154,9 +82,7 @@
 <a class="back-top" href="#top" aria-label="Back to top">↑ Top</a>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <script src="../js/core/main.js"></script>
-    <script src="../../../Desktop/nomadica-final/js/core/validation.js"></script>
-    <script src="../js/data/data.js"></script>
-    <script src="../../../Desktop/nomadica-final/js/core/trip.js"></script>
-    <script src="../../../Desktop/nomadica-final/js/pages/my-trips.js"></script>
+  <script src="../js/core/trips.js"></script>
+  <script src="../js/pages/my-trips.js"></script>
 </body>
 </html>
